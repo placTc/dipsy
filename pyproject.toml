@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.12.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dipsy"
+description = "Tiny functional dependency injection library."
+readme = "README.md"
+version = "1.0.0"
+requires-python = ">=3.11"
+authors = [
+    {name = "Egor Matuk", email = "gregory.matuk2004@gmail.com"}
+]
+maintainers = [
+    {name = "Egor Matuk", email = "gregory.matuk2004@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License"
+]
+
+[project.urls]
+Repository = "https://github.com/placTc/dipsy"
+
+[project.optional-dependencies]
+test = ["pytest"]
+lint = ["black", "pylint", "isort"]
+dev = ["mypy", "pytest", "black", "pylint", "isort"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]
+
+[tool.pylint]
+disable = ["missing-module-docstring"]
+
+[tool.pylint."FORMAT"]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dipsy"]
