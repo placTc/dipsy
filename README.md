@@ -1,7 +1,5 @@
-# Unq
+# Dipsy
 
-A rate limiter and function executing timing library that allows receiving results from the executed functions using futures.
-
-Use a `RateLimiter` class instance to submit functions to be executed. All objects and methods are documented in the code.
+A tiny functional dependency injection library that revolves mostly around a single decorator.
 
 The library supports `mypy` static typing.
